@@ -5,8 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Dulu le</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+  @keyframes gradient-move {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .bg-ungu-bergerak {
+    background: linear-gradient(135deg, #61baf6ff, #eef2ff, #e5e7eb);
+    background-size: 300% 300%;
+    animation: gradient-move 12s ease-in-out infinite;
+  }
+</style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4" style="background-image: url('https://instiki.ac.id/wp-content/uploads/2024/02/Gedung-Depan-1-1024x683.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<body class="min-h-screen flex items-center justify-center p-4 bg-ungu-bergerak">
+  <div class="w-full max-w-md">
+  <!-- script toggle password tetap -->
+</body>
     <div class="w-full max-w-md">
         <!-- Card Container -->
         <div class="bg-white rounded-lg shadow-lg p-8">
@@ -37,7 +53,7 @@
                         name="email" 
                         required
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200"
-                        placeholder="nyomanbracuk@gmail.com"
+                        placeholder="Masukan Email"
                         value="{{ old('email') }}"
                     >
                     <p class="text-red-500 text-sm mt-1 hidden" id="emailError"></p>
