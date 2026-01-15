@@ -13,7 +13,7 @@
     </h2>
 
     <div class="grid gap-4 md:grid-cols-3 mt-4">
-        <div class="bg-white rounded-lg shadow p-4 hover:shadow-md transition cursor-pointer">
+        <div class="bg-white rounded-lg shadow p-4 hover:shadow-lg transition cursor-pointer">
             <p class="text-sm text-gray-500">Total Users</p>
             <p class="text-2xl font-semibold text-gray-800 mt-1">
                 {{ $usersCount }}

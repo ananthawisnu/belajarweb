@@ -6,7 +6,10 @@
 <title>Admin Datang Jir</title>
 
     {{-- Tailwind CDN --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.css">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.3.5/js/dataTables.js"></script>
 
     <style>
         @keyframes admin-gradient-move {
@@ -15,7 +18,7 @@
             100% { background-position: 0% 50%; }
         }
         .bg-admin-animated {
-            background: linear-gradient(135deg, #cfe5f4ff, #6e82c2ff, #8cb1fbff);
+            background: linear-gradient(135deg, #cfe5f4ff, #ffffffff, #ffffffff);
             background-size: 200% 200%;
             animation: admin-gradient-move 16s ease-in-out infinite;
         }
@@ -43,7 +46,7 @@
            transform -translate-x-full md:translate-x-0
            transition-transform duration-200 ease-in-out shadow-xl sidebar-animate">
 
-        <a href="{{ route('admin.dashboard') }}" class="text-white flex items-center space-x-2 px-4">
+        <a href="{{ route('admin.dashboard') }}" class="text-white flex items-bottom space-x-2 px-4 py-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -54,17 +57,17 @@
 
         <nav>
             <a href="{{ route('admin.dashboard') }}"
-               class="block py-2.5 px-4 rounded hover:bg-blue-600
+               class="block py-2.5 px-5 rounded hover:bg-blue-600
                       {{ request()->routeIs('admin.dashboard') ? 'bg-blue-900' : '' }}">
                 Dashboard
             </a>
             <a href="{{ route('admin.users') }}"
-               class="block py-2.5 px-4 rounded hover:bg-blue-600
+               class="block py-2.5 px-5 rounded hover:bg-blue-600
                       {{ request()->routeIs('admin.users') ? 'bg-blue-900' : '' }}">
                 Users
             </a>
             <a href="{{ route('admin.settings') }}"
-               class="block py-2.5 px-4 rounded hover:bg-blue-600
+               class="block py-2.5 px-5 rounded hover:bg-blue-600
                       {{ request()->routeIs('admin.settings') ? 'bg-blue-900' : '' }}">
                 Settings
             </a>
@@ -116,7 +119,7 @@
                         @csrf
                         <button
                             type="submit"
-                            class="text-sm px-3 py-1 rounded bg-red-500 text-white
+                            class="text-md font-extrabold px-5 py-4 rounded bg-red-500 text-white
                                    hover:bg-red-600 transition">
                             Logout
                         </button>
